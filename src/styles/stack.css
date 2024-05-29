@@ -134,7 +134,8 @@ main {
     width: 200px;
   }
 
-  #controls button {
+  #controls button,
+  #controls input {
     width: 200px;
   }
 
