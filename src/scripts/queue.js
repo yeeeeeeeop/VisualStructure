@@ -1,3 +1,5 @@
+import { showModal } from './modal.js';
+
 class Queue {
   constructor(maxSize) {
     this.items = [];

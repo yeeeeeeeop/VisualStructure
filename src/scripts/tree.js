@@ -1,3 +1,5 @@
+import { showModal } from './modal.js';
+
 class TreeNode {
   constructor(value) {
     this.value = value;
@@ -48,8 +50,8 @@ class Tree {
     this.clearVisited();
     const result = [];
     await this.preOrderHelper(this.root, result);
-    this.showTraversalResult(result);
-    await this.sleep(3000);
+    await this.sleep(1000);
+    this.showTraversalResult('preOrder', result);
     this.clearVisited();
   }
 
@@ -67,8 +69,8 @@ class Tree {
     this.clearVisited();
     const result = [];
     await this.inOrderHelper(this.root, result);
-    this.showTraversalResult(result);
-    await this.sleep(3000);
+    this.showTraversalResult('inOrder', result);
+    await this.sleep(1000);
     this.clearVisited();
   }
 
@@ -86,8 +88,8 @@ class Tree {
     this.clearVisited();
     const result = [];
     await this.postOrderHelper(this.root, result);
-    this.showTraversalResult(result);
-    await this.sleep(3000);
+    this.showTraversalResult('postOrder', result);
+    await this.sleep(1000);
     this.clearVisited();
   }
 
@@ -99,6 +101,10 @@ class Tree {
       result.push(node.value);
       await this.sleep(500);
     }
+  }
+
+  showTraversalResult(prefix, result) {
+    showModal(prefix + ': ' + result.join(' -> '));
   }
 
   sleep(ms) {
@@ -175,13 +181,6 @@ class Tree {
     line.setAttribute('stroke', 'black');
     svgContainer.appendChild(line);
   }
-
-  showTraversalResult(result) {
-    const resultContainer = document.getElementById('result');
-    const resultText = document.getElementById('traversal-result');
-    resultContainer.style.display = 'block';
-    resultText.textContent = result.join(' -> ');
-  }
 }
 
 const tree = new Tree();
@@ -218,18 +217,6 @@ function inOrderHandler() {
 
 function postOrderHandler() {
   tree.postOrder();
-}
-
-function showModal(message) {
-  const modal = document.getElementById('modal');
-  const modalMessage = document.getElementById('modal-message');
-  modalMessage.textContent = message;
-  modal.style.display = 'block';
-}
-
-function closeModal() {
-  const modal = document.getElementById('modal');
-  modal.style.display = 'none';
 }
 
 function openNodeModal(node) {

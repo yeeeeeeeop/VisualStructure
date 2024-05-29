@@ -1,3 +1,5 @@
+import { showModal } from './modal.js';
+
 class Stack {
   constructor(maxSize) {
     this.items = [];
@@ -41,8 +43,8 @@ class Stack {
   render() {
     const stackContainer = document.getElementById('stack');
     stackContainer.innerHTML = '';
-    const stackHeight = this.items.length * 40; // 각 요소 높이와 margin을 고려
-    stackContainer.style.height = `${stackHeight}px`; // 스택 컨테이너의 높이를 설정
+    const stackHeight = this.items.length * 40;
+    stackContainer.style.height = `${stackHeight}px`;
     this.items.forEach((item) => {
       const stackElement = document.createElement('div');
       stackElement.className = 'stack-element';
