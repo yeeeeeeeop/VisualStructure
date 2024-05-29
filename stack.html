@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Visual Structure</title>
+    <link rel="stylesheet" href="src/styles/reset.css" />
+    <link rel="stylesheet" href="src/styles/layout.css" />
+    <link rel="stylesheet" href="src/styles/modal.css" />
+    <link rel="stylesheet" href="src/styles/description.css" />
+    <link rel="stylesheet" href="src/styles/stack.css" />
+  </head>
+  <body>
+    <header id="layout-header">
+      <div id="logo">
+        <h1>Visual Structure</h1>
+        <div class="menu-icon">&#9776;</div>
+      </div>
+
+      <nav id="nav-bar">
+        <ul>
+          <li><a href="index.html">메인 화면</a></li>
+          <li><a href="stack.html">스택</a></li>
+          <li><a href="queue.html">큐</a></li>
+          <li><a href="tree.html">트리</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+      <h2 class="title-playground">스택 시각화</h2>
+      <section id="stack-playground">
+        <div id="start-section">
+          <input
+            type="number"
+            id="max-size-input"
+            placeholder="Enter stack max size"
+          />
+          <button class="start-btn">Start</button>
+        </div>
+        <div id="controls" style="display: none">
+          <input type="text" id="element-input" placeholder="Enter element" />
+          <button class="push-btn">push(e)</button>
+          <button class="pop-btn">pop()</button>
+          <button class="top-btn">top()</button>
+          <button class="size-btn">size()</button>
+          <button class="isEmpty-btn">isEmpty()</button>
+          <button class="showElements-btn">showElements()</button>
+        </div>
+        <div id="visualization" style="display: none">
+          <div id="stack"></div>
+        </div>
+      </section>
+
+      <section id="description">
+        <h3>스택 (Stack)이란?</h3>
+        <div class="definition">
+          스택은 후입선출(LIFO, Last In First Out) 원칙을 따르는 자료구조다.
+          스택에서는 가장 나중에 삽입된 요소가 가장 먼저 제거된다.
+        </div>
+        <div class="usage">
+          스택은 주로 다음과 같은 상황에서 주로 사용:
+          <ul>
+            <li>함수 호출 관리 (재귀 호출)</li>
+            <li>뒤로가기 기능 (웹 브라우저)</li>
+            <li>문자열의 괄호 검사</li>
+          </ul>
+        </div>
+        <div class="operations">
+          스택의 주요 연산:
+          <ul>
+            <li><code>push</code>: 스택의 맨 위에 요소를 추가</li>
+            <li><code>pop</code>: 스택의 맨 위에 있는 요소를 제거하고 반환</li>
+            <li>
+              <code>top</code> (또는 <code>peek</code>): 스택의 맨 위에 있는
+              요소를 제거하지 않고 반환
+            </li>
+            <li><code>isEmpty</code>: 스택이 비어 있는지 확인</li>
+            <li><code>size</code>: 스택에 있는 요소의 수를 반환</li>
+          </ul>
+        </div>
+        <div class="advantages">
+          스택의 장점:
+          <ul>
+            <li>구현이 쉽고, 직관적이다.</li>
+            <li>메모리 사용이 효율적이다.</li>
+          </ul>
+        </div>
+        <div class="disadvantages">
+          스택의 단점:
+          <ul>
+            <li>크기가 제한적일 수 있다 (고정 크기 스택의 경우).</li>
+            <li>중간에 있는 요소에 접근하기 어렵다.</li>
+          </ul>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div class="text-group">
+        <p>&copy; Copyright __yeeeeeeeop. All Rights Reserved.</p>
+        <p>
+          Sejong Univ, Computer Engineering<br />__yeeeeeeeop<br />yeop0916@gmail.com
+        </p>
+      </div>
+    </footer>
+
+    <div id="modal" class="modal">
+      <div class="modal-content">
+        <p id="modal-message"></p>
+        <span class="close-btn">&times;</span>
+      </div>
+    </div>
+
+    <script src="src/scripts/layout.js"></script>
+    <script src="src/scripts/modal.js"></script>
+    <script src="src/scripts/stack.js"></script>
+  </body>
+</html>
