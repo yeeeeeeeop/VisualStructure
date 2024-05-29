@@ -1,0 +1,1 @@
+function d(e){const t=document.getElementById("modal"),o=document.getElementById("modal-message");o.textContent=e,t.style.display="block"}function n(){const e=document.getElementById("modal");e.style.display="none"}const l=document.querySelector(".close-btn");l.addEventListener("click",n);export{d as s};
