@@ -134,6 +134,10 @@ main {
     width: 200px;
   }
 
+  #controls button {
+    width: 200px;
+  }
+
   #visualization {
     width: 200px;
   }
