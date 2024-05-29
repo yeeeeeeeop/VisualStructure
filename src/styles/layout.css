@@ -1,0 +1,165 @@
+header {
+  position: fixed;
+  width: 100%;
+  z-index: 999;
+}
+
+#logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #1a4d2e;
+  color: white;
+  height: 80px;
+  width: 100%;
+}
+
+#logo h1 {
+  margin: 0;
+}
+
+.menu-icon {
+  display: none;
+  font-size: 30px;
+  cursor: pointer;
+  position: absolute;
+  top: 20px;
+  right: 20px;
+}
+
+#nav-bar {
+  display: flex;
+  background-color: #fff;
+  justify-content: center;
+  align-items: center;
+  height: 80px;
+}
+
+#nav-bar ul {
+  display: flex;
+  gap: 5rem;
+}
+
+#nav-bar ul li {
+  width: 6rem;
+  height: 100%;
+  font-size: 18px;
+  font-weight: 500;
+  text-align: center;
+}
+
+#nav-bar ul li a {
+  position: relative;
+  transition: color 0.3 ease;
+  padding-bottom: 5px;
+}
+
+#nav-bar ul li a::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0;
+  height: 2px;
+  background-color: #2a5d42;
+  transition: width 0.3s ease;
+}
+
+#nav-bar ul li a:hover {
+  color: #2a5d42;
+}
+
+#nav-bar ul li a:hover::after {
+  width: 100%;
+}
+
+main {
+  padding-top: 160px;
+  height: 100%;
+  min-height: 500px;
+}
+
+footer {
+  position: relative;
+  height: 400px;
+  width: 100%;
+  background: linear-gradient(to bottom, #fff, #002810);
+}
+
+footer .text-group {
+  width: 100%;
+  padding: 20px;
+  position: absolute;
+  bottom: 30px;
+  left: 0;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  color: #fff;
+}
+
+footer .text-group p {
+  line-height: 30px;
+  text-align: right;
+}
+
+@media (max-width: 768px) {
+  header {
+    text-align: left;
+  }
+
+  .menu-icon {
+    display: block;
+  }
+
+  main {
+    padding-top: 80px;
+  }
+
+  #nav-bar {
+    display: none;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+    width: 40%;
+    height: 100%;
+    background-color: #1a4d2e;
+    position: fixed;
+    top: 70px;
+    right: 0;
+    z-index: 3;
+  }
+
+  #nav-bar ul {
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+    padding: 0;
+  }
+
+  #nav-bar ul li {
+    width: 100%;
+    padding: 15px 0;
+  }
+
+  #nav-bar ul li a {
+    width: 100%;
+    color: #fff;
+  }
+
+  #nav-bar.open {
+    display: flex;
+  }
+
+  footer .text-group {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  footer .text-group p {
+    font-size: 12px;
+    text-align: left;
+  }
+}
