@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Visual Structure</title>
+    <link rel="stylesheet" href="src/styles/reset.css" />
+    <link rel="stylesheet" href="src/styles/layout.css" />
+    <link rel="stylesheet" href="src/styles/main.css" />
+  </head>
+  <body>
+    <header id="layout-header">
+      <div id="logo">
+        <h1>Visual Structure</h1>
+        <div class="menu-icon">&#9776;</div>
+      </div>
+
+      <nav id="nav-bar">
+        <ul>
+          <li><a href="index.html">메인 화면</a></li>
+          <li><a href="stack.html">스택</a></li>
+          <li><a href="queue.html">큐</a></li>
+          <li><a href="tree.html">트리</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+      <section id="banner">
+        <div class="overlay"></div>
+        <div class="inner-container">
+          <img
+            src="assets/images/data_structures_book.jpeg"
+            alt="배너 이미지"
+          />
+          <div class="banner-text">
+            <h2>자료구조를 웹사이트에서도 확인하세요!</h2>
+            <p>어쩌구 저쩌구</p>
+            <a
+              href="https://product.kyobobook.co.kr/detail/S000001318821"
+              target="_blank"
+              >책 구입하러 가기 →</a
+            >
+          </div>
+        </div>
+      </section>
+
+      <section id="structures">
+        <div class="structure">
+          <a href="stack.html">
+            <img src="assets/images/stack.png" alt="스택" />
+            <p>스택</p>
+          </a>
+        </div>
+        <div class="structure">
+          <a href="queue.html">
+            <img src="assets/images/queue.png" alt="큐" />
+            <p>큐</p>
+          </a>
+        </div>
+        <div class="structure">
+          <a href="tree.html">
+            <img src="assets/images/tree.png" alt="트리" />
+            <p>트리</p>
+          </a>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div class="text-group">
+        <p>&copy; Copyright __yeeeeeeeop. All Rights Reserved.</p>
+        <p>
+          Sejong Univ, Computer Engineering<br />
+          __yeeeeeeeop<br />
+          yeop0916@gmail.com
+        </p>
+      </div>
+    </footer>
+
+    <script src="src/scripts/layout.js"></script>
+  </body>
+</html>
