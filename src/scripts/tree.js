@@ -15,6 +15,11 @@ class Tree {
   }
 
   addNode(parentNode, value, isLeft) {
+    if (this.contains(value)) {
+      showModal('Node with this value already exists.');
+      return;
+    }
+
     const newNode = new TreeNode(value);
     if (parentNode === null) {
       this.root = newNode;
@@ -27,6 +32,23 @@ class Tree {
       }
     }
     this.render();
+  }
+
+  contains(value) {
+    return this.containsHelper(this.root, value);
+  }
+
+  containsHelper(node, value) {
+    if (node === null) {
+      return false;
+    }
+    if (node.value === value) {
+      return true;
+    }
+    return (
+      this.containsHelper(node.left, value) ||
+      this.containsHelper(node.right, value)
+    );
   }
 
   depth() {
@@ -268,3 +290,17 @@ postOrderBtn.addEventListener('click', postOrderHandler);
 
 const addNodeBtn = document.querySelector('.add-node-btn');
 addNodeBtn.addEventListener('click', addNodeHandler);
+
+const closeBtn = document.querySelector('.close-btn');
+closeBtn.addEventListener('click', closeModal);
+
+window.addEventListener('click', (event) => {
+  const modal = document.getElementById('modal');
+  const nodeModal = document.getElementById('node-modal');
+  if (event.target == modal) {
+    modal.style.display = 'none';
+  }
+  if (event.target == nodeModal) {
+    nodeModal.style.display = 'none';
+  }
+});
